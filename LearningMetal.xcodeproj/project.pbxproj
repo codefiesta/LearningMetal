@@ -8,22 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		1240F229223EBE3F002BE127 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1240F228223EBE3F002BE127 /* AppDelegate.swift */; };
-		1240F22B223EBE3F002BE127 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1240F22A223EBE3F002BE127 /* ViewController.swift */; };
+		1240F22B223EBE3F002BE127 /* SceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1240F22A223EBE3F002BE127 /* SceneController.swift */; };
 		1240F22E223EBE3F002BE127 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1240F22C223EBE3F002BE127 /* Main.storyboard */; };
 		1240F231223EBE40002BE127 /* LearningMetal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1240F22F223EBE40002BE127 /* LearningMetal.xcdatamodeld */; };
 		1240F233223EBE41002BE127 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1240F232223EBE41002BE127 /* Assets.xcassets */; };
 		1240F236223EBE41002BE127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1240F234223EBE41002BE127 /* LaunchScreen.storyboard */; };
+		12E6B47B223EC140008921C3 /* SceneCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6B47A223EC140008921C3 /* SceneCollectionViewController.swift */; };
+		12E6B480223EC646008921C3 /* teapot.obj in Resources */ = {isa = PBXBuildFile; fileRef = 12E6B47E223EC646008921C3 /* teapot.obj */; };
+		12E6B481223EC646008921C3 /* fishy.obj in Resources */ = {isa = PBXBuildFile; fileRef = 12E6B47F223EC646008921C3 /* fishy.obj */; };
+		12E6B483223EC662008921C3 /* inflatableDucky.obj in Resources */ = {isa = PBXBuildFile; fileRef = 12E6B482223EC662008921C3 /* inflatableDucky.obj */; };
+		12E6B486223EC7F9008921C3 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6B485223EC7F9008921C3 /* App.swift */; };
+		12E6B489223EC858008921C3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6B488223EC858008921C3 /* CoreDataStack.swift */; };
+		12E6B48B223EC9ED008921C3 /* SceneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6B48A223EC9ED008921C3 /* SceneCollectionViewCell.swift */; };
+		12E6B48D223ECB01008921C3 /* SceneRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6B48C223ECB01008921C3 /* SceneRenderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1240F225223EBE3F002BE127 /* LearningMetal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningMetal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1240F228223EBE3F002BE127 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1240F22A223EBE3F002BE127 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1240F22A223EBE3F002BE127 /* SceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneController.swift; sourceTree = "<group>"; };
 		1240F22D223EBE3F002BE127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1240F230223EBE40002BE127 /* LearningMetal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LearningMetal.xcdatamodel; sourceTree = "<group>"; };
 		1240F232223EBE41002BE127 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1240F235223EBE41002BE127 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1240F237223EBE41002BE127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12E6B47A223EC140008921C3 /* SceneCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCollectionViewController.swift; sourceTree = "<group>"; };
+		12E6B47E223EC646008921C3 /* teapot.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = teapot.obj; sourceTree = "<group>"; };
+		12E6B47F223EC646008921C3 /* fishy.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fishy.obj; sourceTree = "<group>"; };
+		12E6B482223EC662008921C3 /* inflatableDucky.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inflatableDucky.obj; sourceTree = "<group>"; };
+		12E6B485223EC7F9008921C3 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		12E6B488223EC858008921C3 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		12E6B48A223EC9ED008921C3 /* SceneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCollectionViewCell.swift; sourceTree = "<group>"; };
+		12E6B48C223ECB01008921C3 /* SceneRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneRenderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,103 @@
 		1240F227223EBE3F002BE127 /* LearningMetal */ = {
 			isa = PBXGroup;
 			children = (
-				1240F228223EBE3F002BE127 /* AppDelegate.swift */,
-				1240F22A223EBE3F002BE127 /* ViewController.swift */,
-				1240F22C223EBE3F002BE127 /* Main.storyboard */,
-				1240F232223EBE41002BE127 /* Assets.xcassets */,
-				1240F234223EBE41002BE127 /* LaunchScreen.storyboard */,
-				1240F237223EBE41002BE127 /* Info.plist */,
-				1240F22F223EBE40002BE127 /* LearningMetal.xcdatamodeld */,
+				1240F23D223EBE4D002BE127 /* Classes */,
+				1240F23E223EBE5A002BE127 /* Storyboards */,
+				1240F240223EBE76002BE127 /* Resources */,
 			);
 			path = LearningMetal;
+			sourceTree = "<group>";
+		};
+		1240F23D223EBE4D002BE127 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1240F228223EBE3F002BE127 /* AppDelegate.swift */,
+				1240F23F223EBE6A002BE127 /* Controllers */,
+				12E6B484223EC76D008921C3 /* Renderer */,
+				12E6B47C223EC591008921C3 /* Views */,
+				1240F241223EBE80002BE127 /* CoreData */,
+				1240F242223EBEC9002BE127 /* Scenes */,
+				12E6B487223EC802008921C3 /* Utils */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		1240F23E223EBE5A002BE127 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1240F22C223EBE3F002BE127 /* Main.storyboard */,
+				1240F234223EBE41002BE127 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		1240F23F223EBE6A002BE127 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				12E6B47A223EC140008921C3 /* SceneCollectionViewController.swift */,
+				1240F22A223EBE3F002BE127 /* SceneController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1240F240223EBE76002BE127 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				12E6B47D223EC636008921C3 /* 3DObjects */,
+				1240F232223EBE41002BE127 /* Assets.xcassets */,
+				1240F237223EBE41002BE127 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1240F241223EBE80002BE127 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				12E6B488223EC858008921C3 /* CoreDataStack.swift */,
+				1240F22F223EBE40002BE127 /* LearningMetal.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		1240F242223EBEC9002BE127 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		12E6B47C223EC591008921C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				12E6B48A223EC9ED008921C3 /* SceneCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		12E6B47D223EC636008921C3 /* 3DObjects */ = {
+			isa = PBXGroup;
+			children = (
+				12E6B47F223EC646008921C3 /* fishy.obj */,
+				12E6B482223EC662008921C3 /* inflatableDucky.obj */,
+				12E6B47E223EC646008921C3 /* teapot.obj */,
+			);
+			path = 3DObjects;
+			sourceTree = "<group>";
+		};
+		12E6B484223EC76D008921C3 /* Renderer */ = {
+			isa = PBXGroup;
+			children = (
+				12E6B48C223ECB01008921C3 /* SceneRenderer.swift */,
+			);
+			path = Renderer;
+			sourceTree = "<group>";
+		};
+		12E6B487223EC802008921C3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				12E6B485223EC7F9008921C3 /* App.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +229,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12E6B480223EC646008921C3 /* teapot.obj in Resources */,
 				1240F236223EBE41002BE127 /* LaunchScreen.storyboard in Resources */,
 				1240F233223EBE41002BE127 /* Assets.xcassets in Resources */,
+				12E6B483223EC662008921C3 /* inflatableDucky.obj in Resources */,
 				1240F22E223EBE3F002BE127 /* Main.storyboard in Resources */,
+				12E6B481223EC646008921C3 /* fishy.obj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +246,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1240F231223EBE40002BE127 /* LearningMetal.xcdatamodeld in Sources */,
-				1240F22B223EBE3F002BE127 /* ViewController.swift in Sources */,
+				1240F22B223EBE3F002BE127 /* SceneController.swift in Sources */,
 				1240F229223EBE3F002BE127 /* AppDelegate.swift in Sources */,
+				12E6B48D223ECB01008921C3 /* SceneRenderer.swift in Sources */,
+				12E6B48B223EC9ED008921C3 /* SceneCollectionViewCell.swift in Sources */,
+				12E6B489223EC858008921C3 /* CoreDataStack.swift in Sources */,
+				12E6B486223EC7F9008921C3 /* App.swift in Sources */,
+				12E6B47B223EC140008921C3 /* SceneCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +400,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q69JMRS3FN;
-				INFOPLIST_FILE = LearningMetal/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LearningMetal/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,7 +418,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q69JMRS3FN;
-				INFOPLIST_FILE = LearningMetal/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LearningMetal/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
