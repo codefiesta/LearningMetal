@@ -22,6 +22,7 @@ class Material {
 
 class Node {
 
+    let identifier: UUID
     var name: String
     weak var parent: Node?
     var children = [Node]()
@@ -30,6 +31,7 @@ class Node {
     var material = Material()
     
     init(name: String) {
+        self.identifier = UUID()
         self.name = name
     }
     

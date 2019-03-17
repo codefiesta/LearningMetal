@@ -27,6 +27,7 @@
 		12F4CBE3223EF5BE0019F450 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 12F4CBE2223EF5BE0019F450 /* Shaders.metal */; };
 		12F4CBE5223EF9F20019F450 /* DuckyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4CBE4223EF9F20019F450 /* DuckyScene.swift */; };
 		12F4CBE7223F070E0019F450 /* FishScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4CBE6223F070E0019F450 /* FishScene.swift */; };
+		12F4CBE9223F0F3B0019F450 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4CBE8223F0F3B0019F450 /* Camera.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		12F4CBE2223EF5BE0019F450 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		12F4CBE4223EF9F20019F450 /* DuckyScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckyScene.swift; sourceTree = "<group>"; };
 		12F4CBE6223F070E0019F450 /* FishScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishScene.swift; sourceTree = "<group>"; };
+		12F4CBE8223F0F3B0019F450 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 		12E6B484223EC76D008921C3 /* Renderer */ = {
 			isa = PBXGroup;
 			children = (
+				12F4CBE8223F0F3B0019F450 /* Camera.swift */,
 				12E6B48F223EE2E0008921C3 /* Node.swift */,
 				12E6B493223EE5D9008921C3 /* Math+Extensions.swift */,
 				12E6B491223EE441008921C3 /* Scene.swift */,
@@ -274,6 +277,7 @@
 				12E6B48B223EC9ED008921C3 /* SceneCollectionViewCell.swift in Sources */,
 				12E6B489223EC858008921C3 /* CoreDataStack.swift in Sources */,
 				12F4CBE5223EF9F20019F450 /* DuckyScene.swift in Sources */,
+				12F4CBE9223F0F3B0019F450 /* Camera.swift in Sources */,
 				12E6B486223EC7F9008921C3 /* App.swift in Sources */,
 				12E6B494223EE5D9008921C3 /* Math+Extensions.swift in Sources */,
 				12E6B47B223EC140008921C3 /* SceneCollectionViewController.swift in Sources */,

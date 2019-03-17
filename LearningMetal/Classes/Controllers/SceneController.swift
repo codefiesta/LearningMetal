@@ -45,3 +45,12 @@ class SceneController: UIViewController {
     }
 }
 
+// Gestures and hit detection
+extension SceneController {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let _ = touches.first?.location(in: view) else { return }
+        super.touchesBegan(touches, with: event)
+    }
+}
+

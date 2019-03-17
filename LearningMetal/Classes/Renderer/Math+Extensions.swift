@@ -15,6 +15,7 @@ extension float4 {
 }
 
 extension float4x4 {
+
     init(scaleBy s: Float) {
         self.init(float4(s, 0, 0, 0),
                   float4(0, s, 0, 0),
@@ -63,5 +64,37 @@ extension float4x4 {
     var normalMatrix: float3x3 {
         let upperLeft = float3x3(self[0].xyz, self[1].xyz, self[2].xyz)
         return upperLeft.transpose.inverse
+    }
+}
+
+extension Float {
+
+    var radians: Float {
+        return (self / 180) * .pi
+    }
+}
+
+extension float4x4 {
+
+    init(rotationAroundAxis axis: float3, by angle: Float) {
+        let unitAxis = normalize(axis)
+        let ct = cosf(angle)
+        let st = sinf(angle)
+        let ci = 1 - ct
+        let x = unitAxis.x, y = unitAxis.y, z = unitAxis.z
+        self.init(columns:(float4(    ct + x * x * ci, y * x * ci + z * st, z * x * ci - y * st, 0),
+                           float4(x * y * ci - z * st,     ct + y * y * ci, z * y * ci + x * st, 0),
+                           float4(x * z * ci + y * st, y * z * ci - x * st,     ct + z * z * ci, 0),
+                           float4(                  0,                   0,                   0, 1)))
+    }
+    
+    init(perspectiveProjectionRHFovY fovy: Float, aspectRatio: Float, nearZ: Float, farZ: Float) {
+        let ys = 1 / tanf(fovy * 0.5)
+        let xs = ys / aspectRatio
+        let zs = farZ / (nearZ - farZ)
+        self.init(columns:(float4(xs,  0, 0,   0),
+                           float4( 0, ys, 0,   0),
+                           float4( 0,  0, zs, -1),
+                           float4( 0,  0, zs * nearZ, 0)))
     }
 }
