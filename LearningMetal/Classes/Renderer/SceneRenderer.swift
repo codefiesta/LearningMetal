@@ -36,14 +36,6 @@ protocol SceneRenderer: MTKViewDelegate {
     func buildScene() -> Scene?
 }
 
-extension SceneRenderer {
-    
-    // No-op implementation
-    func update(_ view: MTKView) { }
-    // No-op implementation
-    func buildScene() -> Scene? { return nil }
-}
-
 class DefaultSceneRenderer: NSObject, SceneRenderer {
 
     // The shader function names
@@ -70,6 +62,8 @@ class DefaultSceneRenderer: NSObject, SceneRenderer {
             print("😢 Metal not available")
             return nil
         }
+        view.colorPixelFormat = .bgra8Unorm_srgb
+        view.depthStencilPixelFormat = .depth32Float
         view.device = device
         self.device = device
         self.commandQueue = commandQueue
@@ -79,12 +73,12 @@ class DefaultSceneRenderer: NSObject, SceneRenderer {
         self.depthStencilState = depthStencilState
         super.init()
         self.scene = buildScene()
+        view.delegate = self
     }
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) { }
     
     func draw(in view: MTKView) {
-
         guard let scene = scene, let drawable = view.currentDrawable, let renderPassDescriptor = view.currentRenderPassDescriptor,
             let commandBuffer = commandQueue.makeCommandBuffer() else { return }
 
@@ -143,6 +137,16 @@ class DefaultSceneRenderer: NSObject, SceneRenderer {
         for child in node.children {
             drawNodeTree(child, parentTransform: modelMatrix, commandEncoder: commandEncoder)
         }
+    }
+
+    // No-op implementation
+    func update(_ view: MTKView) { }
+
+    // No-op implementation
+    @discardableResult
+    func buildScene() -> Scene? {
+        print("🚫 No default scene builder")
+        return nil
     }
 }
 

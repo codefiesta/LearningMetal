@@ -31,6 +31,7 @@ class SceneController: UIViewController {
         
         switch descriptor {
         case .inflatableDucky:
+            sceneRenderer = DuckyScene(mtkView)
             break
         case .fishes:
             break
