@@ -11,7 +11,7 @@ import MetalKit
 class DuckyScene: DefaultSceneRenderer {
     
     private let nodeName = "Ducky"
-    var time: Float = 0
+    private var time: Float = 0
     
     override func update(_ view: MTKView) {
         

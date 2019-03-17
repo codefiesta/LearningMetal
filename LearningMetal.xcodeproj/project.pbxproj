@@ -15,7 +15,7 @@
 		1240F236223EBE41002BE127 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1240F234223EBE41002BE127 /* LaunchScreen.storyboard */; };
 		12E6B47B223EC140008921C3 /* SceneCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6B47A223EC140008921C3 /* SceneCollectionViewController.swift */; };
 		12E6B480223EC646008921C3 /* teapot.obj in Resources */ = {isa = PBXBuildFile; fileRef = 12E6B47E223EC646008921C3 /* teapot.obj */; };
-		12E6B481223EC646008921C3 /* fishy.obj in Resources */ = {isa = PBXBuildFile; fileRef = 12E6B47F223EC646008921C3 /* fishy.obj */; };
+		12E6B481223EC646008921C3 /* fish.obj in Resources */ = {isa = PBXBuildFile; fileRef = 12E6B47F223EC646008921C3 /* fish.obj */; };
 		12E6B483223EC662008921C3 /* ducky.obj in Resources */ = {isa = PBXBuildFile; fileRef = 12E6B482223EC662008921C3 /* ducky.obj */; };
 		12E6B486223EC7F9008921C3 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6B485223EC7F9008921C3 /* App.swift */; };
 		12E6B489223EC858008921C3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6B488223EC858008921C3 /* CoreDataStack.swift */; };
@@ -26,6 +26,7 @@
 		12E6B494223EE5D9008921C3 /* Math+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6B493223EE5D9008921C3 /* Math+Extensions.swift */; };
 		12F4CBE3223EF5BE0019F450 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 12F4CBE2223EF5BE0019F450 /* Shaders.metal */; };
 		12F4CBE5223EF9F20019F450 /* DuckyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4CBE4223EF9F20019F450 /* DuckyScene.swift */; };
+		12F4CBE7223F070E0019F450 /* FishScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4CBE6223F070E0019F450 /* FishScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +40,7 @@
 		1240F237223EBE41002BE127 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12E6B47A223EC140008921C3 /* SceneCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCollectionViewController.swift; sourceTree = "<group>"; };
 		12E6B47E223EC646008921C3 /* teapot.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = teapot.obj; sourceTree = "<group>"; };
-		12E6B47F223EC646008921C3 /* fishy.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fishy.obj; sourceTree = "<group>"; };
+		12E6B47F223EC646008921C3 /* fish.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fish.obj; sourceTree = "<group>"; };
 		12E6B482223EC662008921C3 /* ducky.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ducky.obj; sourceTree = "<group>"; };
 		12E6B485223EC7F9008921C3 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		12E6B488223EC858008921C3 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -50,6 +51,7 @@
 		12E6B493223EE5D9008921C3 /* Math+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Math+Extensions.swift"; sourceTree = "<group>"; };
 		12F4CBE2223EF5BE0019F450 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		12F4CBE4223EF9F20019F450 /* DuckyScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckyScene.swift; sourceTree = "<group>"; };
+		12F4CBE6223F070E0019F450 /* FishScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				12F4CBE4223EF9F20019F450 /* DuckyScene.swift */,
+				12F4CBE6223F070E0019F450 /* FishScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -159,7 +162,7 @@
 		12E6B47D223EC636008921C3 /* 3DObjects */ = {
 			isa = PBXGroup;
 			children = (
-				12E6B47F223EC646008921C3 /* fishy.obj */,
+				12E6B47F223EC646008921C3 /* fish.obj */,
 				12E6B482223EC662008921C3 /* ducky.obj */,
 				12E6B47E223EC646008921C3 /* teapot.obj */,
 			);
@@ -249,7 +252,7 @@
 				1240F233223EBE41002BE127 /* Assets.xcassets in Resources */,
 				12E6B483223EC662008921C3 /* ducky.obj in Resources */,
 				1240F22E223EBE3F002BE127 /* Main.storyboard in Resources */,
-				12E6B481223EC646008921C3 /* fishy.obj in Resources */,
+				12E6B481223EC646008921C3 /* fish.obj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +269,7 @@
 				12E6B492223EE441008921C3 /* Scene.swift in Sources */,
 				1240F229223EBE3F002BE127 /* AppDelegate.swift in Sources */,
 				12E6B490223EE2E0008921C3 /* Node.swift in Sources */,
+				12F4CBE7223F070E0019F450 /* FishScene.swift in Sources */,
 				12E6B48D223ECB01008921C3 /* SceneRenderer.swift in Sources */,
 				12E6B48B223EC9ED008921C3 /* SceneCollectionViewCell.swift in Sources */,
 				12E6B489223EC858008921C3 /* CoreDataStack.swift in Sources */,

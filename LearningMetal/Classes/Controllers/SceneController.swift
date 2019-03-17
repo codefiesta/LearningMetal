@@ -34,6 +34,7 @@ class SceneController: UIViewController {
             sceneRenderer = DuckyScene(mtkView)
             break
         case .fishes:
+            sceneRenderer = FishScene(mtkView)
             break
         case .teapot:
             break
