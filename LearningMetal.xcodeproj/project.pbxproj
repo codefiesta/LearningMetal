@@ -21,6 +21,10 @@
 		12E6B489223EC858008921C3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6B488223EC858008921C3 /* CoreDataStack.swift */; };
 		12E6B48B223EC9ED008921C3 /* SceneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6B48A223EC9ED008921C3 /* SceneCollectionViewCell.swift */; };
 		12E6B48D223ECB01008921C3 /* SceneRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6B48C223ECB01008921C3 /* SceneRenderer.swift */; };
+		12E6B490223EE2E0008921C3 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6B48F223EE2E0008921C3 /* Node.swift */; };
+		12E6B492223EE441008921C3 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6B491223EE441008921C3 /* Scene.swift */; };
+		12E6B494223EE5D9008921C3 /* Math+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6B493223EE5D9008921C3 /* Math+Extensions.swift */; };
+		12F4CBE3223EF5BE0019F450 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 12F4CBE2223EF5BE0019F450 /* Shaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		12E6B488223EC858008921C3 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		12E6B48A223EC9ED008921C3 /* SceneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCollectionViewCell.swift; sourceTree = "<group>"; };
 		12E6B48C223ECB01008921C3 /* SceneRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneRenderer.swift; sourceTree = "<group>"; };
+		12E6B48F223EE2E0008921C3 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		12E6B491223EE441008921C3 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		12E6B493223EE5D9008921C3 /* Math+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Math+Extensions.swift"; sourceTree = "<group>"; };
+		12F4CBE2223EF5BE0019F450 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +166,11 @@
 		12E6B484223EC76D008921C3 /* Renderer */ = {
 			isa = PBXGroup;
 			children = (
+				12E6B48F223EE2E0008921C3 /* Node.swift */,
+				12E6B493223EE5D9008921C3 /* Math+Extensions.swift */,
+				12E6B491223EE441008921C3 /* Scene.swift */,
 				12E6B48C223ECB01008921C3 /* SceneRenderer.swift */,
+				12F4CBE2223EF5BE0019F450 /* Shaders.metal */,
 			);
 			path = Renderer;
 			sourceTree = "<group>";
@@ -245,13 +257,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12F4CBE3223EF5BE0019F450 /* Shaders.metal in Sources */,
 				1240F231223EBE40002BE127 /* LearningMetal.xcdatamodeld in Sources */,
 				1240F22B223EBE3F002BE127 /* SceneController.swift in Sources */,
+				12E6B492223EE441008921C3 /* Scene.swift in Sources */,
 				1240F229223EBE3F002BE127 /* AppDelegate.swift in Sources */,
+				12E6B490223EE2E0008921C3 /* Node.swift in Sources */,
 				12E6B48D223ECB01008921C3 /* SceneRenderer.swift in Sources */,
 				12E6B48B223EC9ED008921C3 /* SceneCollectionViewCell.swift in Sources */,
 				12E6B489223EC858008921C3 /* CoreDataStack.swift in Sources */,
 				12E6B486223EC7F9008921C3 /* App.swift in Sources */,
+				12E6B494223EE5D9008921C3 /* Math+Extensions.swift in Sources */,
 				12E6B47B223EC140008921C3 /* SceneCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
