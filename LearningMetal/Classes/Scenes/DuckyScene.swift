@@ -10,11 +10,34 @@ import MetalKit
 
 class DuckyScene: DefaultSceneRenderer {
     
-    override func update(_ view: MTKView) { }
+    private let nodeName = "Ducky"
+    var time: Float = 0
+    
+    override func update(_ view: MTKView) {
+        
+        guard let scene = scene else { return }
+        
+        time += 1 / Float(view.preferredFramesPerSecond)
+        
+        cameraWorldPosition = float3(0, 0, 5)
+
+        viewMatrix = float4x4(translationBy: -cameraWorldPosition) * float4x4(rotationAbout: float3(1, 0, 0), by: .pi / 6)
+        
+        let aspectRatio = Float(view.drawableSize.width / view.drawableSize.height)
+        projectionMatrix = float4x4(perspectiveProjectionFov: Float.pi / 6, aspectRatio: aspectRatio, nearZ: 0.1, farZ: 100)
+        
+        // Rotate the camera angle around the duck
+        let angle = -time
+        scene.rootNode.modelMatrix = float4x4(rotationAbout: float3(0, 1, 0), by: angle)
+        
+        if let ducky = scene.nodeNamed(nodeName) {
+            // Bob up and down
+            ducky.modelMatrix = float4x4(translationBy: float3(0, 0.015 * sin(time * 5), 0))
+        }
+    }
 
     /// Builds the inflatable ducky scene which is a simple node
     override func buildScene() -> Scene? {
-        print("🐥 Building ...")
         let bufferAllocator = MTKMeshBufferAllocator(device: device)
         let textureLoader = MTKTextureLoader(device: device)
         let options: [MTKTextureLoader.Option : Any] = [.generateMipmaps : true, .SRGB : true]
@@ -27,7 +50,7 @@ class DuckyScene: DefaultSceneRenderer {
         let light2 = Light(worldPosition: float3( 0, -5, 0), color: float3(0.3, 0.3, 0.3))
         scene.lights = [ light0, light1, light2 ]
 
-        let ducky = Node(name: "Ducky")
+        let ducky = Node(name: nodeName)
         let duckyMaterial = Material()
         let duckyBaseColorTexture = try? textureLoader.newTexture(name: "duckyTexture",
                                                                 scaleFactor: 1.0,
@@ -43,7 +66,6 @@ class DuckyScene: DefaultSceneRenderer {
         ducky.mesh = try! MTKMesh.newMeshes(asset: bobAsset, device: device).metalKitMeshes.first!
 
         scene.rootNode.children.append(ducky)
-        print("🐥 Built")
         return scene
     }
 
