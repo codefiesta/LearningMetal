@@ -31,6 +31,9 @@ protocol SceneRenderer: MTKViewDelegate {
     
     /// Returns the scene that is being rendered
     var scene: Scene? { get }
+    
+    var cameraWorldPosition: float3 { get set }
+    
     // Initalization
     init?(_ view: MTKView)
     // The update function called in draw which subclasses should implement

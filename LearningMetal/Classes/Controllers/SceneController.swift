@@ -36,51 +36,14 @@ class SceneController: UIViewController {
         case .fishes:
             sceneRenderer = FishScene(mtkView)
             break
-        case .building:
-            break
         case .teapot:
+            sceneRenderer = TeapotScene(mtkView)
             break
-        case .cow:
-            break
+        case .gestures:
+            sceneRenderer = DuckyGesturesScene(mtkView)
         }
         
         // Initialize our renderer with the view size
         sceneRenderer?.mtkView(mtkView, drawableSizeWillChange: mtkView.drawableSize)
     }
 }
-
-// Gestures and hit detection
-extension SceneController {
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-
-        guard let location = touches.first?.location(in: view) else { return }
-        print("Touches began @[\(location)]")
-        
-//        guard let scene = sceneRenderer?.scene else { return }
-//        let node = scene.hitTest(at: location, in: view.bounds)
-//        print("Hit at @[\(String(describing: node?.name))]")
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesMoved(touches, with: event)
-        
-//        guard let location = touches.first?.location(in: view), let previousLocation = touches.first?.previousLocation(in: view) else { return }
-        
-//        let x = location.x - previousLocation.x
-//        let y = location.y - previousLocation.y
-//        print("Touches moved [\(x), \(y)]")
-        
-    }
-
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-    }
-
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesCancelled(touches, with: event)
-    }
-
-}
-

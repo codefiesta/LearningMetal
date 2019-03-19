@@ -32,19 +32,16 @@ class Node {
     var material = Material()
 
     // Transforms
-    var transform: float4x4
+    var transform = matrix_identity_float4x4
 
     var worldTransform: float4x4 {
         guard let parent = parent else { return transform }
         return parent.worldTransform * transform
     }
 
-    var boundingSphere = BoundingSphere(center: float3(x: 0, y: 0, z: 0), radius: 0)
-
     init(name: String) {
         self.identifier = UUID()
         self.name = name
-        self.transform = matrix_identity_float4x4
     }
     
     /// Recursively finds the first child or descendant with the specified name
@@ -59,12 +56,3 @@ class Node {
         return nil
     }
 }
-
-extension Node {
-    
-    /// Returns the farthest descendant in the node tree that contains the intersects the ray (including itself).
-    func hitTest(_ ray: Ray) -> Node? {
-        return nil
-    }
-}
-
