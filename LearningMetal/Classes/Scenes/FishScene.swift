@@ -11,12 +11,13 @@ import MetalKit
 class FishScene: DefaultSceneRenderer {
     
     private let nodeName = "Fishy"
-    private let fishCount = 12
+    private let fishCount = 8
     private var time: Float = 0
     
-    override func update(_ view: MTKView) {
+    override func update(_ view: MTKView, descriptor: MTLRenderPassDescriptor) {
         
         guard let scene = scene else { return }
+        descriptor.colorAttachments[0].clearColor = MTLClearColorMake(1, 0.5, 0.5, 1.0)
         
         time += 1 / Float(view.preferredFramesPerSecond)
         

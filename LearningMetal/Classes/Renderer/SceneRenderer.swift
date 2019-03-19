@@ -28,10 +28,16 @@ struct FragmentUniforms {
 
 /// Provides the basic scene rendering protocol
 protocol SceneRenderer: MTKViewDelegate {
+    
+    /// Returns the scene that is being rendered
+    var scene: Scene? { get }
+    
+    var cameraWorldPosition: float3 { get set }
+    
     // Initalization
     init?(_ view: MTKView)
     // The update function called in draw which subclasses should implement
-    func update(_ view: MTKView)
+    func update(_ view: MTKView, descriptor: MTLRenderPassDescriptor)
     // Builds the appropriate scene which subclasses should implement
     func buildScene() -> Scene?
 }
@@ -41,7 +47,8 @@ class DefaultSceneRenderer: NSObject, SceneRenderer {
     // The shader function names
     private static let vertexFunction = "vertexMain"
     private static let fragmentFunction = "fragmentMain"
-
+    private let preferredFramesPerSecond = 60
+    
     let device: MTLDevice
     let commandQueue: MTLCommandQueue
     let vertexDescriptor: MDLVertexDescriptor
@@ -62,6 +69,7 @@ class DefaultSceneRenderer: NSObject, SceneRenderer {
             print("😢 Metal not available")
             return nil
         }
+        view.preferredFramesPerSecond = preferredFramesPerSecond
         view.colorPixelFormat = .bgra8Unorm_srgb
         view.depthStencilPixelFormat = .depth32Float
         view.device = device
@@ -82,9 +90,7 @@ class DefaultSceneRenderer: NSObject, SceneRenderer {
         guard let scene = scene, let drawable = view.currentDrawable, let renderPassDescriptor = view.currentRenderPassDescriptor,
             let commandBuffer = commandQueue.makeCommandBuffer() else { return }
 
-        update(view)
-        
-        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(0.63, 0.81, 1.0, 1.0)
+        update(view, descriptor: renderPassDescriptor)
         let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)!
         commandEncoder.setFrontFacing(.counterClockwise)
         commandEncoder.setCullMode(.back)
@@ -140,7 +146,7 @@ class DefaultSceneRenderer: NSObject, SceneRenderer {
     }
 
     // No-op implementation
-    func update(_ view: MTKView) { }
+    func update(_ view: MTKView, descriptor: MTLRenderPassDescriptor) { }
 
     // No-op implementation
     @discardableResult

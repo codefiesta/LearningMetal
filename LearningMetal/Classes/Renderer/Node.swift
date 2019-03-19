@@ -6,6 +6,7 @@
 //  Copyright © 2019 Procore. All rights reserved.
 //
 
+import ModelIO
 import MetalKit
 import simd
 
@@ -22,14 +23,24 @@ class Material {
 
 class Node {
 
+    let identifier: UUID
     var name: String
     weak var parent: Node?
     var children = [Node]()
     var modelMatrix = matrix_identity_float4x4
     var mesh: MTKMesh?
     var material = Material()
-    
+
+    // Transforms
+    var transform = matrix_identity_float4x4
+
+    var worldTransform: float4x4 {
+        guard let parent = parent else { return transform }
+        return parent.worldTransform * transform
+    }
+
     init(name: String) {
+        self.identifier = UUID()
         self.name = name
     }
     
@@ -45,4 +56,3 @@ class Node {
         return nil
     }
 }
-

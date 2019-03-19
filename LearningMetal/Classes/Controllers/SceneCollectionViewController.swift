@@ -13,6 +13,7 @@ enum SceneDescriptor: Int, CaseIterable {
     case inflatableDucky
     case fishes
     case teapot
+    case gestures
     
     var sceneName: String? {
         switch self {
@@ -22,6 +23,8 @@ enum SceneDescriptor: Int, CaseIterable {
             return "Fishy"
         case .teapot:
             return "Teapot"
+        case .gestures:
+            return "Inflatable Ducky with Gesture Recognizers"
         }
     }
 }

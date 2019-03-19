@@ -37,11 +37,13 @@ class SceneController: UIViewController {
             sceneRenderer = FishScene(mtkView)
             break
         case .teapot:
+            sceneRenderer = TeapotScene(mtkView)
             break
+        case .gestures:
+            sceneRenderer = DuckyGesturesScene(mtkView)
         }
         
         // Initialize our renderer with the view size
         sceneRenderer?.mtkView(mtkView, drawableSizeWillChange: mtkView.drawableSize)
     }
 }
-
