@@ -9,6 +9,11 @@
 import simd
 
 extension float4 {
+
+    init(_ v: float3, _ w: Float) {
+        self.init(x: v.x, y: v.y, z: v.z, w: w)
+    }
+
     var xyz: float3 {
         return float3(x, y, z)
     }

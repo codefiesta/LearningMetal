@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "tiles_baseColor.jpg",
+      "filename" : "tilesTexture.jpg",
       "scale" : "1x"
     },
     {

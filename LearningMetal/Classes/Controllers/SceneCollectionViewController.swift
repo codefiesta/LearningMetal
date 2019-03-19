@@ -12,6 +12,8 @@ enum SceneDescriptor: Int, CaseIterable {
 
     case inflatableDucky
     case fishes
+    case building
+    case cow
     case teapot
     
     var sceneName: String? {
@@ -20,6 +22,10 @@ enum SceneDescriptor: Int, CaseIterable {
             return "Inflatable Ducky"
         case .fishes:
             return "Fishy"
+        case .building:
+            return "Building (San Diego Convention Center)"
+        case .cow:
+            return "Cow"
         case .teapot:
             return "Teapot"
         }

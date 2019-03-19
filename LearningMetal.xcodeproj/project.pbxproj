@@ -27,7 +27,9 @@
 		12F4CBE3223EF5BE0019F450 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 12F4CBE2223EF5BE0019F450 /* Shaders.metal */; };
 		12F4CBE5223EF9F20019F450 /* DuckyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4CBE4223EF9F20019F450 /* DuckyScene.swift */; };
 		12F4CBE7223F070E0019F450 /* FishScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4CBE6223F070E0019F450 /* FishScene.swift */; };
-		12F4CBE9223F0F3B0019F450 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4CBE8223F0F3B0019F450 /* Camera.swift */; };
+		12F4CBE9223F0F3B0019F450 /* SceneCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4CBE8223F0F3B0019F450 /* SceneCamera.swift */; };
+		12F4CBEB223F17E40019F450 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4CBEA223F17E40019F450 /* Ray.swift */; };
+		12F4CBED223F18E70019F450 /* BoundingSphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4CBEC223F18E70019F450 /* BoundingSphere.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +55,9 @@
 		12F4CBE2223EF5BE0019F450 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		12F4CBE4223EF9F20019F450 /* DuckyScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckyScene.swift; sourceTree = "<group>"; };
 		12F4CBE6223F070E0019F450 /* FishScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishScene.swift; sourceTree = "<group>"; };
-		12F4CBE8223F0F3B0019F450 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		12F4CBE8223F0F3B0019F450 /* SceneCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCamera.swift; sourceTree = "<group>"; };
+		12F4CBEA223F17E40019F450 /* Ray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ray.swift; sourceTree = "<group>"; };
+		12F4CBEC223F18E70019F450 /* BoundingSphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundingSphere.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,10 +178,12 @@
 		12E6B484223EC76D008921C3 /* Renderer */ = {
 			isa = PBXGroup;
 			children = (
-				12F4CBE8223F0F3B0019F450 /* Camera.swift */,
-				12E6B48F223EE2E0008921C3 /* Node.swift */,
+				12F4CBEC223F18E70019F450 /* BoundingSphere.swift */,
 				12E6B493223EE5D9008921C3 /* Math+Extensions.swift */,
+				12E6B48F223EE2E0008921C3 /* Node.swift */,
+				12F4CBEA223F17E40019F450 /* Ray.swift */,
 				12E6B491223EE441008921C3 /* Scene.swift */,
+				12F4CBE8223F0F3B0019F450 /* SceneCamera.swift */,
 				12E6B48C223ECB01008921C3 /* SceneRenderer.swift */,
 				12F4CBE2223EF5BE0019F450 /* Shaders.metal */,
 			);
@@ -266,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12F4CBEB223F17E40019F450 /* Ray.swift in Sources */,
 				12F4CBE3223EF5BE0019F450 /* Shaders.metal in Sources */,
 				1240F231223EBE40002BE127 /* LearningMetal.xcdatamodeld in Sources */,
 				1240F22B223EBE3F002BE127 /* SceneController.swift in Sources */,
@@ -277,10 +284,11 @@
 				12E6B48B223EC9ED008921C3 /* SceneCollectionViewCell.swift in Sources */,
 				12E6B489223EC858008921C3 /* CoreDataStack.swift in Sources */,
 				12F4CBE5223EF9F20019F450 /* DuckyScene.swift in Sources */,
-				12F4CBE9223F0F3B0019F450 /* Camera.swift in Sources */,
+				12F4CBE9223F0F3B0019F450 /* SceneCamera.swift in Sources */,
 				12E6B486223EC7F9008921C3 /* App.swift in Sources */,
 				12E6B494223EE5D9008921C3 /* Math+Extensions.swift in Sources */,
 				12E6B47B223EC140008921C3 /* SceneCollectionViewController.swift in Sources */,
+				12F4CBED223F18E70019F450 /* BoundingSphere.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

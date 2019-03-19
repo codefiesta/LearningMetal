@@ -13,10 +13,11 @@ class DuckyScene: DefaultSceneRenderer {
     private let nodeName = "Ducky"
     private var time: Float = 0
     
-    override func update(_ view: MTKView) {
+    override func update(_ view: MTKView, descriptor: MTLRenderPassDescriptor) {
         
         guard let scene = scene else { return }
-        
+        descriptor.colorAttachments[0].clearColor = MTLClearColorMake(0.63, 0.81, 1.0, 1.0)
+
         time += 1 / Float(view.preferredFramesPerSecond)
         
         cameraWorldPosition = float3(0, 0, 5)
@@ -26,13 +27,13 @@ class DuckyScene: DefaultSceneRenderer {
         let aspectRatio = Float(view.drawableSize.width / view.drawableSize.height)
         projectionMatrix = float4x4(perspectiveProjectionFov: Float.pi / 6, aspectRatio: aspectRatio, nearZ: 0.1, farZ: 100)
         
-        // Rotate the camera angle around the duck
+        // Rotate around the node
         let angle = -time
         scene.rootNode.modelMatrix = float4x4(rotationAbout: float3(0, 1, 0), by: angle)
         
-        if let ducky = scene.nodeNamed(nodeName) {
+        if let node = scene.nodeNamed(nodeName) {
             // Bob up and down
-            ducky.modelMatrix = float4x4(translationBy: float3(0, 0.015 * sin(time * 5), 0))
+            node.modelMatrix = float4x4(translationBy: float3(0, 0.015 * sin(time * 5), 0))
         }
     }
 
@@ -50,22 +51,21 @@ class DuckyScene: DefaultSceneRenderer {
         let light2 = Light(worldPosition: float3( 0, -5, 0), color: float3(0.3, 0.3, 0.3))
         scene.lights = [ light0, light1, light2 ]
 
-        let ducky = Node(name: nodeName)
-        let duckyMaterial = Material()
-        let duckyBaseColorTexture = try? textureLoader.newTexture(name: "duckyTexture",
-                                                                scaleFactor: 1.0,
-                                                                bundle: nil,
-                                                                options: options)
-        duckyMaterial.baseColorTexture = duckyBaseColorTexture
-        duckyMaterial.specularPower = 100
-        duckyMaterial.specularColor = float3(0.8, 0.8, 0.8)
-        ducky.material = duckyMaterial
-
-        let bobURL = Bundle.main.url(forResource: "ducky", withExtension: "obj")!
-        let bobAsset = MDLAsset(url: bobURL, vertexDescriptor: vertexDescriptor, bufferAllocator: bufferAllocator)
-        ducky.mesh = try! MTKMesh.newMeshes(asset: bobAsset, device: device).metalKitMeshes.first!
-
-        scene.rootNode.children.append(ducky)
+        let node = Node(name: nodeName)
+        let nodeMaterial = Material()
+        let nodeBaseColorTexture = try? textureLoader.newTexture(name: "duckyTexture",
+                                                                 scaleFactor: 1.0,
+                                                                 bundle: nil,
+                                                                 options: options)
+        nodeMaterial.baseColorTexture = nodeBaseColorTexture
+        nodeMaterial.specularPower = 100
+        nodeMaterial.specularColor = float3(0.8, 0.8, 0.8)
+        node.material = nodeMaterial
+        
+        let nodeURL = Bundle.main.url(forResource: "ducky", withExtension: "obj")!
+        let nodeAsset = MDLAsset(url: nodeURL, vertexDescriptor: vertexDescriptor, bufferAllocator: bufferAllocator)
+        node.mesh = try! MTKMesh.newMeshes(asset: nodeAsset, device: device).metalKitMeshes.first!
+        scene.rootNode.children.append(node)
         return scene
     }
 
