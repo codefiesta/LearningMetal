@@ -82,6 +82,10 @@ extension DuckyGesturesScene {
 
     /// Adds a simple pinch gesture to the ducky
     @objc func handlePinchGesture(_ gestureRecognizer : UIPinchGestureRecognizer) {
+        guard let scene = scene else { return }
         
+        let scale = Float(gestureRecognizer.scale)
+        let value: Float = scale > 1 ? 1.03 : 0.97
+        scene.rootNode.modelMatrix.scale(axis: float3(value, value, value))
     }
 }
