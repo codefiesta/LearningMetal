@@ -15,6 +15,7 @@ class DuckyGesturesScene: DuckyScene {
     private var colorChannel: Int = 0
     private var colorChannels: [Float] = [1.0, 0.0, 0.0, 1.0] // RGBA
     private let dynamicColorRate: Float = 0.0125
+    private var feedbackGenerator : UIImpactFeedbackGenerator? = nil
 
     required init?(_ view: MTKView) {
         super.init(view)
@@ -102,7 +103,21 @@ extension DuckyGesturesScene {
         guard let scene = scene else { return }
         
         let scale = Float(gestureRecognizer.scale)
-        let value: Float = scale > 1 ? 1.02 : 0.98
-        scene.rootNode.modelMatrix.scale(axis: float3(value, value, value))
+        
+        switch gestureRecognizer.state {
+        case .began:
+            feedbackGenerator = UIImpactFeedbackGenerator()
+            feedbackGenerator?.prepare()
+        case .changed:
+            let value: Float = scale > 1 ? 1.02 : 0.98
+            scene.rootNode.modelMatrix.scale(axis: float3(value, value, value))
+
+            feedbackGenerator?.impactOccurred()
+            feedbackGenerator?.prepare()
+        case .cancelled, .ended, .failed:
+            feedbackGenerator = nil
+        default:
+            break
+        }
     }
 }
