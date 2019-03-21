@@ -19,11 +19,16 @@ class DuckyGesturesScene: DuckyScene {
     required init?(_ view: MTKView) {
         super.init(view)
         
-        /// Adds the pan gesture to the Ducky
+        /// Adds the pan gesture to rotate the Ducky
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
         view.addGestureRecognizer(panGesture)
-        
-        // Adds the pinch gesture to the Ducky
+
+        /// Adds the move gesture to move the Ducky around
+        let moveGesture = UIPanGestureRecognizer(target: self, action: #selector(handleMoveGesture(_:)))
+        moveGesture.minimumNumberOfTouches = 2
+        view.addGestureRecognizer(moveGesture)
+
+        // Adds the pinch gesture zoom in/out on the Ducky
         let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(handlePinchGesture(_:)))
         view.addGestureRecognizer(pinchGesture)
     }
@@ -66,7 +71,7 @@ class DuckyGesturesScene: DuckyScene {
 
 extension DuckyGesturesScene {
     
-    /// Adds a simple pan gesture to the ducky
+    /// Adds a simple pan gesture to rotate the ducky
     @objc func handlePanGesture(_ gestureRecognizer : UIPanGestureRecognizer) {
         
         guard let scene = scene, let view = gestureRecognizer.view else { return }
@@ -79,13 +84,25 @@ extension DuckyGesturesScene {
         scene.rootNode.modelMatrix.rotate(angle: x, axis: float3(0, 1, 0))
         scene.rootNode.modelMatrix.rotate(angle: y, axis: float3(1, 0, 0))
     }
+    
+    @objc func handleMoveGesture(_ gestureRecognizer : UIPanGestureRecognizer) {
+        guard let scene = scene, let view = gestureRecognizer.view else { return }
+        
+        let velocity = gestureRecognizer.translation(in: view)
+        
+        let multiplier: Float = 0.0075 // Slows the movement down
+        let x = Float(velocity.x).radians * multiplier
+        let y = Float(velocity.y).radians * multiplier * -1
+        scene.rootNode.modelMatrix.translate(direction: float3(x, y, 0))
+    }
+    
 
     /// Adds a simple pinch gesture to the ducky
     @objc func handlePinchGesture(_ gestureRecognizer : UIPinchGestureRecognizer) {
         guard let scene = scene else { return }
         
         let scale = Float(gestureRecognizer.scale)
-        let value: Float = scale > 1 ? 1.03 : 0.97
+        let value: Float = scale > 1 ? 1.02 : 0.98
         scene.rootNode.modelMatrix.scale(axis: float3(value, value, value))
     }
 }
