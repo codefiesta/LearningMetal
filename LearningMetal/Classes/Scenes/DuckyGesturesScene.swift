@@ -22,6 +22,10 @@ class DuckyGesturesScene: DuckyScene {
         /// Adds the pan gesture to the Ducky
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
         view.addGestureRecognizer(panGesture)
+        
+        // Adds the pinch gesture to the Ducky
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(handlePinchGesture(_:)))
+        view.addGestureRecognizer(pinchGesture)
     }
     
     override func update(_ view: MTKView, descriptor: MTLRenderPassDescriptor) {
@@ -67,14 +71,17 @@ extension DuckyGesturesScene {
         
         guard let scene = scene, let view = gestureRecognizer.view else { return }
         
-        let translation = gestureRecognizer.translation(in: view)
+        let velocity = gestureRecognizer.velocity(in: view)
+
+        let multiplier: Float = 0.0075 // Slows the movement down
+        let x = Float(velocity.x).radians * multiplier
+        let y = Float(velocity.y).radians * multiplier
+        scene.rootNode.modelMatrix.rotate(angle: x, axis: float3(0, 1, 0))
+        scene.rootNode.modelMatrix.rotate(angle: y, axis: float3(1, 0, 0))
+    }
+
+    /// Adds a simple pinch gesture to the ducky
+    @objc func handlePinchGesture(_ gestureRecognizer : UIPinchGestureRecognizer) {
         
-        let multiplier: Float = 0.25 // Slows the movement down
-        let x = Float(translation.x).radians * multiplier
-        let y = Float(translation.y).radians * multiplier
-        
-        let xRotation = float4x4(rotationAbout: float3(0, 1, 0), by: x)
-        let yRotation = float4x4(rotationAbout: float3(1, 0, 0), by: y)
-        scene.rootNode.modelMatrix = xRotation * yRotation // Turntable
     }
 }
