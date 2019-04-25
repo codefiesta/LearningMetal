@@ -26,6 +26,7 @@
 		12E6B490223EE2E0008921C3 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6B48F223EE2E0008921C3 /* Node.swift */; };
 		12E6B492223EE441008921C3 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6B491223EE441008921C3 /* Scene.swift */; };
 		12E6B494223EE5D9008921C3 /* Math+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E6B493223EE5D9008921C3 /* Math+Extensions.swift */; };
+		12EAE3A6227224D4002B8556 /* ARSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EAE3A5227224D4002B8556 /* ARSceneController.swift */; };
 		12F4CBE3223EF5BE0019F450 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 12F4CBE2223EF5BE0019F450 /* Shaders.metal */; };
 		12F4CBE5223EF9F20019F450 /* DuckyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4CBE4223EF9F20019F450 /* DuckyScene.swift */; };
 		12F4CBE7223F070E0019F450 /* FishScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F4CBE6223F070E0019F450 /* FishScene.swift */; };
@@ -53,6 +54,7 @@
 		12E6B48F223EE2E0008921C3 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		12E6B491223EE441008921C3 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		12E6B493223EE5D9008921C3 /* Math+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Math+Extensions.swift"; sourceTree = "<group>"; };
+		12EAE3A5227224D4002B8556 /* ARSceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneController.swift; sourceTree = "<group>"; };
 		12F4CBE2223EF5BE0019F450 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		12F4CBE4223EF9F20019F450 /* DuckyScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckyScene.swift; sourceTree = "<group>"; };
 		12F4CBE6223F070E0019F450 /* FishScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishScene.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			children = (
 				12E6B47A223EC140008921C3 /* SceneCollectionViewController.swift */,
 				1240F22A223EBE3F002BE127 /* SceneController.swift */,
+				12EAE3A5227224D4002B8556 /* ARSceneController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				TargetAttributes = {
 					1240F224223EBE3F002BE127 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -269,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12EAE3A6227224D4002B8556 /* ARSceneController.swift in Sources */,
 				12F4CBE3223EF5BE0019F450 /* Shaders.metal in Sources */,
 				1240F231223EBE40002BE127 /* LearningMetal.xcdatamodeld in Sources */,
 				1240F22B223EBE3F002BE127 /* SceneController.swift in Sources */,
@@ -439,7 +444,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.learning.metal.LearningMetal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -457,7 +462,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.learning.metal.LearningMetal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

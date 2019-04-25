@@ -14,6 +14,7 @@ enum SceneDescriptor: Int, CaseIterable {
     case fishes
     case teapot
     case gestures
+    case arkit
     
     var sceneName: String? {
         switch self {
@@ -25,13 +26,13 @@ enum SceneDescriptor: Int, CaseIterable {
             return "Teapot"
         case .gestures:
             return "Inflatable Ducky with Gesture Recognizers"
+        case .arkit:
+            return "ARKit"
         }
     }
 }
 
 class SceneCollectionViewController: UICollectionViewController {
-    
-    private let cellIdentifier = "Cell"
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
@@ -64,11 +65,14 @@ class SceneCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let sceneDescriptor = SceneDescriptor.allCases[indexPath.row]
+        let cellIdentifier = sceneDescriptor == .arkit ? "ARCell" : "Cell"
+
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? SceneCollectionViewCell else {
             return UICollectionViewCell()
         }
-
-        let sceneDescriptor = SceneDescriptor.allCases[indexPath.row]
+        
         cell.prepare(sceneDescriptor)
         return cell
     }

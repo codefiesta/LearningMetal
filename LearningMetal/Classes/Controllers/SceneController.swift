@@ -41,6 +41,8 @@ class SceneController: UIViewController {
             break
         case .gestures:
             sceneRenderer = DuckyGesturesScene(mtkView)
+        default:
+            break
         }
         
         // Initialize our renderer with the view size

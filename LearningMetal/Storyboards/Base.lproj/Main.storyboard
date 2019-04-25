@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u4P-19-siN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u4P-19-siN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -68,6 +68,33 @@
                                     <segue destination="gRm-rC-CSd" kind="show" id="6pX-YK-ROi"/>
                                 </connections>
                             </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ARCell" id="yd6-oL-YRZ" customClass="SceneCollectionViewCell" customModule="LearningMetal" customModuleProvider="target">
+                                <rect key="frame" x="137.5" y="10" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARScene" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGI-5B-5SL">
+                                            <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="TGI-5B-5SL" firstAttribute="leading" secondItem="yd6-oL-YRZ" secondAttribute="leading" constant="10" id="JN9-Aj-kbG"/>
+                                    <constraint firstAttribute="trailing" secondItem="TGI-5B-5SL" secondAttribute="trailing" constant="10" id="LWI-I6-pfb"/>
+                                    <constraint firstItem="TGI-5B-5SL" firstAttribute="top" secondItem="yd6-oL-YRZ" secondAttribute="top" constant="10" id="cPB-3o-GAX"/>
+                                    <constraint firstAttribute="bottom" secondItem="TGI-5B-5SL" secondAttribute="bottom" constant="10" id="u4L-Am-AIc"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="nameLabel" destination="TGI-5B-5SL" id="Agm-JQ-7Ur"/>
+                                    <segue destination="VHn-nw-NRo" kind="show" id="Fsh-v0-Ixl"/>
+                                </connections>
+                            </collectionViewCell>
                         </cells>
                         <connections>
                             <outlet property="dataSource" destination="nFb-3X-Pvi" id="ZZZ-yW-3JW"/>
@@ -79,6 +106,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IW0-5V-KzB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1128.8" y="126.38680659670166"/>
+        </scene>
+        <!--Scene Controller-->
+        <scene sceneID="qBF-XC-Vev">
+            <objects>
+                <viewController id="VHn-nw-NRo" customClass="ARSceneController" customModule="LearningMetal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tqj-ZH-eSN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3CL-3J-HMm">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </arscnView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3CL-3J-HMm" firstAttribute="bottom" secondItem="NX0-sx-dIH" secondAttribute="bottom" id="12t-mD-coK"/>
+                            <constraint firstItem="3CL-3J-HMm" firstAttribute="leading" secondItem="NX0-sx-dIH" secondAttribute="leading" id="65Z-DM-nNE"/>
+                            <constraint firstItem="3CL-3J-HMm" firstAttribute="trailing" secondItem="NX0-sx-dIH" secondAttribute="trailing" id="NAT-9H-6pd"/>
+                            <constraint firstItem="3CL-3J-HMm" firstAttribute="top" secondItem="NX0-sx-dIH" secondAttribute="top" id="gaw-6u-Ame"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NX0-sx-dIH"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="3CL-3J-HMm" id="FWy-i9-Ra4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sot-AW-Kqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1128.8" y="877.51124437781118"/>
         </scene>
         <!--Scene Controller-->
         <scene sceneID="TWK-VF-Ixz">
