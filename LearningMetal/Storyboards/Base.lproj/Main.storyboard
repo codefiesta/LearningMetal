@@ -68,33 +68,6 @@
                                     <segue destination="gRm-rC-CSd" kind="show" id="6pX-YK-ROi"/>
                                 </connections>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ARCell" id="yd6-oL-YRZ" customClass="SceneCollectionViewCell" customModule="LearningMetal" customModuleProvider="target">
-                                <rect key="frame" x="137.5" y="10" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARScene" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGI-5B-5SL">
-                                            <rect key="frame" x="10" y="10" width="80" height="80"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </view>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="TGI-5B-5SL" firstAttribute="leading" secondItem="yd6-oL-YRZ" secondAttribute="leading" constant="10" id="JN9-Aj-kbG"/>
-                                    <constraint firstAttribute="trailing" secondItem="TGI-5B-5SL" secondAttribute="trailing" constant="10" id="LWI-I6-pfb"/>
-                                    <constraint firstItem="TGI-5B-5SL" firstAttribute="top" secondItem="yd6-oL-YRZ" secondAttribute="top" constant="10" id="cPB-3o-GAX"/>
-                                    <constraint firstAttribute="bottom" secondItem="TGI-5B-5SL" secondAttribute="bottom" constant="10" id="u4L-Am-AIc"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="nameLabel" destination="TGI-5B-5SL" id="Agm-JQ-7Ur"/>
-                                    <segue destination="VHn-nw-NRo" kind="show" id="Fsh-v0-Ixl"/>
-                                </connections>
-                            </collectionViewCell>
                         </cells>
                         <connections>
                             <outlet property="dataSource" destination="nFb-3X-Pvi" id="ZZZ-yW-3JW"/>
@@ -108,48 +81,41 @@
             <point key="canvasLocation" x="1128.8" y="126.38680659670166"/>
         </scene>
         <!--Scene Controller-->
-        <scene sceneID="qBF-XC-Vev">
-            <objects>
-                <viewController id="VHn-nw-NRo" customClass="ARSceneController" customModule="LearningMetal" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tqj-ZH-eSN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3CL-3J-HMm">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                            </arscnView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="3CL-3J-HMm" firstAttribute="bottom" secondItem="NX0-sx-dIH" secondAttribute="bottom" id="12t-mD-coK"/>
-                            <constraint firstItem="3CL-3J-HMm" firstAttribute="leading" secondItem="NX0-sx-dIH" secondAttribute="leading" id="65Z-DM-nNE"/>
-                            <constraint firstItem="3CL-3J-HMm" firstAttribute="trailing" secondItem="NX0-sx-dIH" secondAttribute="trailing" id="NAT-9H-6pd"/>
-                            <constraint firstItem="3CL-3J-HMm" firstAttribute="top" secondItem="NX0-sx-dIH" secondAttribute="top" id="gaw-6u-Ame"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="NX0-sx-dIH"/>
-                    </view>
-                    <connections>
-                        <outlet property="sceneView" destination="3CL-3J-HMm" id="FWy-i9-Ra4"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Sot-AW-Kqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1128.8" y="877.51124437781118"/>
-        </scene>
-        <!--Scene Controller-->
         <scene sceneID="TWK-VF-Ixz">
             <objects>
                 <viewController id="gRm-rC-CSd" customClass="SceneController" customModule="LearningMetal" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cqm-Fp-Nme" customClass="MTKView">
+                    <view key="view" contentMode="scaleToFill" id="cqm-Fp-Nme">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5X-7u-FLc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <mtkView contentMode="scaleToFill" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="Jfz-5K-ihx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mtkView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="O5X-7u-FLc" firstAttribute="leading" secondItem="cqm-Fp-Nme" secondAttribute="leading" id="25l-mq-xgr"/>
+                            <constraint firstItem="Jfz-5K-ihx" firstAttribute="leading" secondItem="cqm-Fp-Nme" secondAttribute="leading" id="9bb-WC-veW"/>
+                            <constraint firstItem="Jfz-5K-ihx" firstAttribute="top" secondItem="cqm-Fp-Nme" secondAttribute="top" id="HqF-OX-fId"/>
+                            <constraint firstItem="Jfz-5K-ihx" firstAttribute="bottom" secondItem="cqm-Fp-Nme" secondAttribute="bottom" id="NJ5-61-l19"/>
+                            <constraint firstItem="O5X-7u-FLc" firstAttribute="top" secondItem="cqm-Fp-Nme" secondAttribute="top" id="Syp-HU-ape"/>
+                            <constraint firstItem="O5X-7u-FLc" firstAttribute="trailing" secondItem="cqm-Fp-Nme" secondAttribute="trailing" id="bKM-vv-cOl"/>
+                            <constraint firstItem="O5X-7u-FLc" firstAttribute="bottom" secondItem="cqm-Fp-Nme" secondAttribute="bottom" id="etM-MT-bdp"/>
+                            <constraint firstItem="Jfz-5K-ihx" firstAttribute="trailing" secondItem="cqm-Fp-Nme" secondAttribute="trailing" id="ydJ-YM-bIo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mxK-5n-Ots"/>
                     </view>
+                    <connections>
+                        <outlet property="arScnView" destination="O5X-7u-FLc" id="Zz5-yA-ooK"/>
+                        <outlet property="mtkView" destination="Jfz-5K-ihx" id="jce-Nj-rLD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqQ-fH-Jrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2087" y="126"/>
+            <point key="canvasLocation" x="2085.5999999999999" y="125.4872563718141"/>
         </scene>
     </scenes>
 </document>
